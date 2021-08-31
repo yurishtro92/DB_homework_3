@@ -1,0 +1,17 @@
+select title, year from albums
+where year = 2018;
+
+select title, duration from tracks
+where duration = (select max(duration) from tracks);
+
+select title from tracks 
+where duration > 3.5;
+
+select title from collections 
+where year between 2018 and 2020;
+
+select name from authors 
+where array_length(regexp_split_to_array(name, '\s+'), 1) <= 1;
+
+select title from tracks 
+where title like '%My%';
